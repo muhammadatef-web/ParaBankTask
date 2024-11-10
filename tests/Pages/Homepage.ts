@@ -30,7 +30,7 @@ async ClickonAccountoverviewlink(){
 };
 async ClickonupdateLink(){
     await expect(this.UpdateContactinfolink).toBeVisible();
-    await this.Accountoverviewlink.click();
+    await this.UpdateContactinfolink.click();
 
 }
 
