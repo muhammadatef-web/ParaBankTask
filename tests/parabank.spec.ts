@@ -85,22 +85,20 @@ test('Checkifuserabletoupdatecontact',async({page})=>{
   await log.enterlogininfo('atefdoe','password123');
   const upd= new UpdateContactinfo(page);
   await home.ClickonupdateLink();
-  await upd.clearthedatainfieldfirstname();
+  await page.reload({ waitUntil: 'networkidle' });
+  await page.waitForTimeout(3000);
   await upd.updateUser({
-    fname: 'atef',
+    fname: 'aly',
     lname: 'Do',
     addressf: '1',
       cityf: 'N',
-      statef: 'NY',
+      statef: 'ismailia',
       zipcodef: '10',
       phonef: '555',
   })
-
-await page.waitForTimeout(3000);
-  
-  await upd.ClickUpdateBtn();
-
-  
+    await upd.ClickUpdateBtn();
+    await page.waitForTimeout(3000);
+  await upd.verifyifconfirmationmessageisdisplayed();
 
 
 

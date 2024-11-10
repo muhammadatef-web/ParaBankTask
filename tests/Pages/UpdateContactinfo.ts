@@ -63,5 +63,11 @@ async ClickUpdateBtn(){
 
 
 }
+async verifyifconfirmationmessageisdisplayed(){
+
+    await  expect(this.Confirmessage).toBeVisible()
+
+
+    }
 
 }
